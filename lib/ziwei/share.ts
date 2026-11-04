@@ -50,7 +50,7 @@ export function formToBirthInfo(form: BirthFormState): BirthInfo {
 /** BirthFormState → URLSearchParams（用于分享链接） */
 export function formToSearchParams(form: BirthFormState): URLSearchParams {
   const p = new URLSearchParams();
-  if (form.name) p.set('n', form.name);
+  // F4: do not put the name in share URLs (PII leaks via browser history, logs, Referer).
   p.set('y', form.year);
   p.set('m', form.month);
   p.set('d', form.day);
