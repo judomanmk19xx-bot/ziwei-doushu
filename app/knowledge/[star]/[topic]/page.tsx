@@ -100,7 +100,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ star
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
 
       {/* 顶栏 */}
       <div className="px-6 py-4 flex items-center justify-between"
